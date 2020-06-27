@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/breaking_news_fragment">
+
+    <fragment
+        android:id="@+id/artFragment"
+        android:name="ArtFragment"
+        android:label="ArtFragment"
+        tools:layout="@layout/fragment_art">
+        <argument
+            android:name="article"
+            app:argType="com.example.newsapp.models.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/breaking_news_fragment"
+        android:name="com.example.newsapp.ui.fragment.Breaking_news_fragment"
+        android:label="fragment_breaking_news_fragment"
+        tools:layout="@layout/fragment_breaking_news_fragment" >
+        <action
+            android:id="@+id/action_breaking_news_fragment_to_artFragment"
+            app:destination="@id/artFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/saved_news_fragment"
+        android:name="com.example.newsapp.ui.fragment.Saved_news_fragment"
+        android:label="fragment_saved_news_fragment"
+        tools:layout="@layout/fragment_saved_news_fragment" >
+        <action
+            android:id="@+id/action_saved_news_fragment_to_artFragment"
+            app:destination="@id/artFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/search_news_fragment"
+        android:name="com.example.newsapp.ui.fragment.Search_news_fragment"
+        android:label="fragment_search_news_fragment"
+        tools:layout="@layout/fragment_search_news_fragment" >
+        <action
+            android:id="@+id/action_search_news_fragment_to_artFragment"
+            app:destination="@id/artFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+</navigation>
